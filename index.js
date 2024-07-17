@@ -77,6 +77,20 @@ for(let eventName of fs.readdirSync("./events")) {
 	console.log(`[+] ${eventName} olayı başarıyla yüklendi.`)
 }
 
+// Sunucu oluşturma ve proje aktivitesi sağlama.
+const express = require('express');
+const app = express();
+const port = 3000;
+
+// Web sunucu
+app.get('/', (req, res) => {
+  res.sendStatus(200);
+});
+
+app.listen(port, () => {
+  console.log(`Sunucu ${port} numaralı bağlantı noktasında yürütülüyor.`);
+});
+
 
 
 client.once("ready", async() => {
